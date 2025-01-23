@@ -9,14 +9,14 @@ class ReversePolish:
                 b,a = stk.pop(), stk.pop()
 
                 if(t == "+"):
-                    stk.append(int(a+b))
+                    stk.append(a+b)
                 elif(t == "-"):
-                    stk.append(int(a-b))
+                    stk.append(a-b)
                 elif(t == "*"):
-                    stk.append(int(a*b))
+                    stk.append(a*b)
 
                 else:
-                    stk.append(int(a/b))
+                    stk.append(a/b)
 
             else:
                 # if operand comes
