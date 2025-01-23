@@ -1,14 +1,36 @@
 class ReversePolish:
-    def __init__(self,tokens) -> int:
-        self.tokens = tokens
+    def evalPRN(self,tokens) -> int:
+        stk = []
 
+        for t in tokens:
 
-    # def evaluation(num1,num2,operator):
-    #     hashMap = {
-    #         "+" : +,
-    #         "-" : -,
-    #         "*" : *
-    #     }
+            # if operater comes
+            if t in "+-*/":
+                b,a = stk.pop(), stk.pop()
 
-    #     get_operator = hashMap['operator']
-    #     return num1 get_operator num2
+                if(t == "+"):
+                    stk.append(int(a+b))
+                elif(t == "-"):
+                    stk.append(int(a-b))
+                elif(t == "*"):
+                    stk.append(int(a*b))
+
+                else:
+                    stk.append(int(a/b))
+
+            else:
+                # if operand comes
+                 
+                # dont forget it to convert into int
+                stk.append(int(t))
+        
+        return stk[-1]
+    
+
+rpn  = ReversePolish()
+print(rpn.evalPRN(["1","2","+","3","*","4","-"]))
+
+                
+            
+
+   
