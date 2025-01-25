@@ -1,6 +1,6 @@
 class SimplifyPath:
 
-    def simplify(self,path:str) -> list:
+    def simplify(self,path:str) -> str:
 
         path_array = path.split("/")
         stk = []
@@ -16,7 +16,18 @@ class SimplifyPath:
 
         
 
-        return "/" + "/".join(stk) if stk else "/"
+        # return "/" + "/".join(stk) if stk else "/"
+
+        # simplify version
+        
+        if(stk):
+            return "/" + "/".join(stk)
+        else:
+            return "/"
+
+
+        #    "/" + "/".join(['home', 'foo'])  # Result is "/home/foo"
+        #  
 
 
 path = SimplifyPath()
