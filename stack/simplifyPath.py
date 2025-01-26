@@ -1,5 +1,5 @@
 class SimplifyPath:
-
+# https://interviewing.io/questions/simplify-path
     def simplify(self,path:str) -> str:
 
         path_array = path.split("/")
