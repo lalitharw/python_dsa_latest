@@ -1,21 +1,21 @@
-class PatternOneThreeTwo:
+def pattern(arr):
+    stk  = []
+    second_highest = float("inf")
 
-    def __init__(self,arr):
-        self.arr = arr
-    
-    def pattern(self):
+    for idx in arr:
 
-        stk = []
+        if(idx < second_highest):
+            return True
 
-        for a in self.arr:
-            i = 0
-            # if stk:
-            #     if(i == )
+        while(stk and stk[-1] < idx):
+            second_highest = stk.pop()
 
-            # else:
-            #     stk.append(a)
-            #     i += 1
+        stk.append(idx)
 
-pattern = PatternOneThreeTwo()
+    return False
 
-print(pattern)
+
+# we just have to some how find second highest number
+
+print(pattern([3,1,4,2]))
+
